@@ -9,25 +9,25 @@ package fr.fgk.model;
  *
  * @author Nathan Ghozlan
  */
-public class Client {
-
+public class Commande {
+    
+    private int idPlatChoisis;
     private int idClient;
-    private String nom;   
-    
-    
 
-    public Client() {
+    public Commande() {
     }
 
-    
-
-    public Client(String nom) {
-        this.nom = nom;
-    }
-
-    public Client(int idClient, String nom) {
+    public Commande(int idPlatChoisis, int idClient) {
+        this.idPlatChoisis = idPlatChoisis;
         this.idClient = idClient;
-        this.nom = nom;
+    }
+
+    public int getIdPlatChoisis() {
+        return idPlatChoisis;
+    }
+
+    public void setIdPlatChoisis(int idPlatChoisis) {
+        this.idPlatChoisis = idPlatChoisis;
     }
 
     public int getIdClient() {
@@ -38,18 +38,8 @@ public class Client {
         this.idClient = idClient;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
     
     
     
-    
-    
-
 
 }

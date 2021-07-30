@@ -104,7 +104,7 @@ public class Accueil extends javax.swing.JFrame {
                 //JOptionPane.showMessageDialog(rootPane, "connexion ok");
 
             
-            Commande com = new Commande();
+            CommandeIhm com = new CommandeIhm();
             com.setVisible(true);
             this.setVisible(false);
             }

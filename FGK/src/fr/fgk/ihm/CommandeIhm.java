@@ -6,9 +6,18 @@
 package fr.fgk.ihm;
 
 import fr.fgk.dao.ClientDao;
+import fr.fgk.dao.CommandeDao;
+import fr.fgk.dao.PlatChoisisDao;
+import fr.fgk.dao.PlatDao;
 import fr.fgk.model.Client;
+import fr.fgk.model.Commande;
+import fr.fgk.model.Plat;
+import fr.fgk.model.PlatChoisis;
 import fr.fgk.properties.PropertiesGlobals;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,12 +25,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author dylan55
  */
-public class Commande extends javax.swing.JFrame {
+public class CommandeIhm extends javax.swing.JFrame {
 
     /**
      * Creates new form Accueil
      */
-    public Commande() {
+    public CommandeIhm() {
         initComponents();
         jLabel1.setText("Client: " + PropertiesGlobals.USER_CONNECT.getNom());
     }
@@ -56,6 +65,7 @@ public class Commande extends javax.swing.JFrame {
         ButtonSuivant1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         TCommande = new javax.swing.JTable();
+        CommanderBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -245,6 +255,15 @@ public class Commande extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(TCommande);
 
+        CommanderBtn.setBackground(new java.awt.Color(255, 0, 51));
+        CommanderBtn.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        CommanderBtn.setText("Terminer la commande");
+        CommanderBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CommanderBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -284,8 +303,9 @@ public class Commande extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                    .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CommanderBtn))
+                .addGap(58, 58, 58))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -300,7 +320,9 @@ public class Commande extends javax.swing.JFrame {
                         .addComponent(jScrollPane2)
                         .addGap(42, 42, 42)
                         .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(411, 411, 411))
+                        .addGap(18, 18, 18)
+                        .addComponent(CommanderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(348, 348, 348))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -325,7 +347,6 @@ public class Commande extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
@@ -347,7 +368,7 @@ public class Commande extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(294, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,11 +394,9 @@ public class Commande extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
         //chicken
         String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
         int quant = Integer.parseInt(qte);
-        PropertiesGlobals.USER_CONNECT.setQtePlatChoisi(quant);
 
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Article");
@@ -386,44 +405,34 @@ public class Commande extends javax.swing.JFrame {
 
         try {
 
-            Client u = new Client(PropertiesGlobals.USER_CONNECT.getNom());
-
-            u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
             if (u != null) {
 
-                u.setQtePlatChoisi(quant);
-                u.setIdPlatDisp(1);
-                ClientDao.insertPlatsChoisis(u);
-                
-                
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(1);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
 
             }
 
-            ClientDao.insertPlatsChoisis(u);
-
-            List<Client> panier = ClientDao.getAllPlatsDisp();
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
 
             //panier.add(u);
-            for (Client platsChoisis : panier) {
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(1);
 
-                model.addRow(new Object[]{
-                    platsChoisis.getPlatChoisi(),
-                    
-                    
-                    //platsChoisis.setQtePlatChoisi(PropertiesGlobals.USER_CONNECT.getQtePlatChoisi()),                    
-                    platsChoisis.getQtePlatChoisi(),
-                    
-                    
-                    
-                    //platsChoisis.setPrixPlatDispos(prix),
-                    platsChoisis.getPrixPlatDispos() * quant,
-                }
-                );
-
-                float prix = quant * platsChoisis.getPrixPlatDispos();
-                System.out.println("prixTotal: " + prix);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
 
             }
+            );
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
@@ -460,9 +469,33 @@ public class Commande extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Article");
         model.addColumn("Qté");
+        model.addColumn("Prix");
 
         TCommande.setModel(model);
     }//GEN-LAST:event_formWindowOpened
+
+    private void CommanderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommanderBtnActionPerformed
+        try {
+            // VALIDER LA COMMANDE:
+            Client u = ClientDao.getLastClientById();
+            if (u != null) {
+
+                PlatChoisis c = PlatChoisisDao.getLastPlatChoisisById();
+
+                Commande com = new Commande();
+                com.setIdClient(u.getIdClient());
+                com.setIdPlatChoisis(c.getIdPlatsChoisis());
+
+                CommandeDao.insertCommande2(com);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CommandeIhm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+    }//GEN-LAST:event_CommanderBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -481,18 +514,22 @@ public class Commande extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Commande.class
+            java.util.logging.Logger.getLogger(CommandeIhm.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Commande.class
+            java.util.logging.Logger.getLogger(CommandeIhm.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Commande.class
+            java.util.logging.Logger.getLogger(CommandeIhm.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Commande.class
+            java.util.logging.Logger.getLogger(CommandeIhm.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -501,13 +538,14 @@ public class Commande extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Commande().setVisible(true);
+                new CommandeIhm().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonSuivant1;
+    private javax.swing.JButton CommanderBtn;
     private javax.swing.JTable TCommande;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
