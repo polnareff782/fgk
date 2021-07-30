@@ -82,6 +82,15 @@ INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`
 INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('3', 'Coca', '2', '2');
 INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('4', 'Fanta', '2', '2');
 INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('5', 'Glace', '2', '3');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('6', 'Double-Egg', '18', '1');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('7', 'Double', '15', '1');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('8', 'Whooper', '14', '1');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('9', 'Egg-Burger', '15', '1');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('10', 'King', '20', '1');
+INSERT INTO `fast_good_kitchen`.`plat` (`idPlat`, `libelle`, `prixPlat`, `idCat`) VALUES ('11', 'Steak-House', '19', '1');
+
+
+
 
 INSERT INTO `fast_good_kitchen`.`platschoisis` (`idPlatsChoisis`, `quantite`, `idPlat`) VALUES ('1', '2', '1');
 INSERT INTO `fast_good_kitchen`.`platschoisis` (`idPlatsChoisis`, `quantite`, `idPlat`) VALUES ('2', '1', '4');
@@ -90,3 +99,4 @@ INSERT INTO `fast_good_kitchen`.`commande` (`idPlatsChoisis`, `idClient`) VALUES
 INSERT INTO `fast_good_kitchen`.`commande` (`idPlatsChoisis`, `idClient`) VALUES ('2', '1');
 
 INSERT INTO `fast_good_kitchen`.`facture` (`idFacture`, `montant`, `dateFacturation`, `etat`, `idClient`) VALUES ('1', '12', '2021-12-10', '1', '1');
+

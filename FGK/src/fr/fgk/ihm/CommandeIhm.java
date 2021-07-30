@@ -274,7 +274,7 @@ public class CommandeIhm extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGap(244, 244, 244))
@@ -286,29 +286,32 @@ public class CommandeIhm extends javax.swing.JFrame {
                                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addContainerGap()
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(42, 42, 42)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton11)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton10)))
+                                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(0, 0, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                            .addGap(0, 4, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CommanderBtn))
                 .addGap(58, 58, 58))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -317,8 +320,19 @@ public class CommandeIhm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2)
+                                .addGap(42, 42, 42))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(CommanderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -350,15 +364,7 @@ public class CommandeIhm extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel2))
-                        .addGap(213, 213, 213))))
+                        .addGap(396, 396, 396))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -382,15 +388,136 @@ public class CommandeIhm extends javax.swing.JFrame {
 
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+// double burger
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+
+        try {
+
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(7);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(7);
+
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+
+            }
+            );
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+        TCommande.setModel(model);
+
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+
+        // double egg burger
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+
+        try {
+
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(6);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(6);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+
+            }
+            );
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+
+        TCommande.setModel(model);
+
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
+
+        //whooper burger
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+        try {
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(8);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(8);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+            }
+            );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+        TCommande.setModel(model);
+
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
@@ -420,7 +547,7 @@ public class CommandeIhm extends javax.swing.JFrame {
 
             }
 
-            List<Plat> panier = PlatDao.getAllPlatsDisp();
+            List<Plat> panier = null;
 
             //panier.add(u);
             PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
@@ -434,6 +561,7 @@ public class CommandeIhm extends javax.swing.JFrame {
             }
             );
 
+            //panier.add(platDisp);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
         }
@@ -445,19 +573,174 @@ public class CommandeIhm extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
+
+        // steakhouse burger
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+        try {
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(12);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(12);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+            }
+            );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+        TCommande.setModel(model);
+
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
+
+        // egg burger
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+
+        try {
+
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(10);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+
+            }
+
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(10);
+
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+
+            }
+            );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+
+        TCommande.setModel(model);
+
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         //fish
+        // fish burger
+
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+        try {
+
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(2);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(2);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+            }
+            );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+        TCommande.setModel(model);
+
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
+        
+        // king burger
+        
+        String qte = JOptionPane.showInputDialog("Entrez la quantité souhaité: ");
+        int quant = Integer.parseInt(qte);
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Article");
+        model.addColumn("Qté");
+        model.addColumn("Prix");
+        try {
+
+            Client u = ClientDao.getByNom(PropertiesGlobals.USER_CONNECT.getNom());
+            if (u != null) {
+
+                PlatChoisis c = new PlatChoisis();
+                c.setIdPlat(11);
+                c.setQtePlatChoisi(quant);
+                System.out.println("idPlat: " + c.getIdPlat());
+                PlatChoisisDao.insertPlatsChoisis(c);
+                Plat p = new Plat();
+                p.setIdPlatDisp(c.getIdPlat());
+                p = PlatDao.getPlatById(p.getIdPlatDisp());
+            }
+            List<Plat> panier = PlatDao.getAllPlatsDisp();
+
+            //panier.add(u);
+            PlatChoisis choix = PlatChoisisDao.getLastPlatChoisisById();
+            Plat platDisp = PlatDao.getPlatById(11);
+            model.addRow(new Object[]{
+                platDisp.getPlatDispos(),
+                choix.getQtePlatChoisi(),
+                platDisp.getPrixPlatDispos() * quant
+            }
+            );
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "exception: " + e.getMessage());
+        }
+        TCommande.setModel(model);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void ButtonSuivant1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSuivant1ActionPerformed
@@ -491,7 +774,8 @@ public class CommandeIhm extends javax.swing.JFrame {
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(CommandeIhm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CommandeIhm.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
 
