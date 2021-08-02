@@ -66,6 +66,7 @@ public class CommandeIhm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         TCommande = new javax.swing.JTable();
         CommanderBtn = new javax.swing.JButton();
+        btRetour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -264,11 +265,18 @@ public class CommandeIhm extends javax.swing.JFrame {
             }
         });
 
+        btRetour.setText("Retour");
+        btRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btRetourActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -310,7 +318,8 @@ public class CommandeIhm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CommanderBtn))
+                    .addComponent(CommanderBtn)
+                    .addComponent(btRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(58, 58, 58))
         );
         jPanel1Layout.setVerticalGroup(
@@ -336,7 +345,9 @@ public class CommandeIhm extends javax.swing.JFrame {
                         .addComponent(ButtonSuivant1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(CommanderBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(348, 348, 348))
+                        .addGap(18, 18, 18)
+                        .addComponent(btRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(284, 284, 284))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -781,6 +792,12 @@ public class CommandeIhm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_CommanderBtnActionPerformed
 
+    private void btRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRetourActionPerformed
+        Bienvenue bv = new Bienvenue();
+        bv.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btRetourActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -831,6 +848,7 @@ public class CommandeIhm extends javax.swing.JFrame {
     private javax.swing.JButton ButtonSuivant1;
     private javax.swing.JButton CommanderBtn;
     private javax.swing.JTable TCommande;
+    private javax.swing.JButton btRetour;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
